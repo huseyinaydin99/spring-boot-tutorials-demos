@@ -55,3 +55,60 @@ Spring Boot projesini nasıl oluşturulur?
 
 Spring ekibi, Spring Boot başlangıç ​​projesi oluşturmak için çevrimiçi bir web aracı sağlar. Spring başlatıcı aracını bu URL’de bulabilirsiniz https://start.spring.io/
 Spring boot projesi oluşturmak için tek yapmanız gereken proje detaylarını, Spring Boot sürümünü girmek ve bağımlılıkları eklemek ve generate / üret butonuna basmak.
+
+#### Spring MVC Nedir?
+
+Spring MVC, Java’da web uygulamaları oluşturmak için bir framework / çerçeve / çatı) dır.
+• Model / View / Controller(Model-Görünüm-Kontrol) tasarım şablonuna dayalıdır.
+• Kontrolün tersine çevrilmesi ve bağımlılık enjeksiyonu gibi temel Spring çerçevesinin özelliklerinden yararlanır.
+Model / View / Controller(Model-Görünüm-Denetleyici) nedir?
+
+MVC bir tasarım desenidir ancak bir katmanlı mimari değildir. Herhangi bir yazılım firmasına ait değildir. Tüm yazılımcılar arasında kabul görmüş ve kullanılan ortak bir tasarım şablonudur. Spring MVC, MVC tasarım şablonuna göre yazılmış bir çatı / framework’dür.
+
+![alt text](spring-mvc.jpg "image Title")
+
+İsteği / request’i ilk alan yer front controller / ön kontrolcüdür. Ön kontrolcü isteği aldıktan sonra ilgili kontrolcüye gönderir. İlgili kontrolcü isteği aldıktan sonra servis katmanına, servis katmanı ise veri erişim katmanına gider. Veri erişim katmanı veri tabanından verileri çeker getirir. Kontrolcü veriyi elde ettikten sonra ilgili verileri model nesnesinin içine koyar ve o modeli görünümün yani view’in içine gömer. İlgili view kullanıcıya html(hyper text markup language) olarak döner.
+
+
+View ile Controller arasında taşınan nesne aslında Model nesnesidir.
+
+Client tarafından gelen form nesnesi de aslında model nesnesidir.
+
+Model aslında Controller ile View arasında iletişim sağlayan nesnedir.
+
+Controller GET, POST, PUT, DELETE, PATCH gibi HTTP isteklerini karşılayan nesnedir / yapıdır.
+
+View yapısı Chrome, Firefox yada Opera gibi Web tarayıcılarda gösterilen HTML(Hyper Text Markup Language) dosyasıdır. İçerisinde JS / Java Script, CSS / Cascading Style Sheet, JQuery gibi yapılar barındırabilir.
+
+Spring MVC’nin mimarisinin akış şeması aşağıdadır:
+
+Tarayıcı, sunucuya bir istek gönderir. Sunucu bu isteği alır, işler ve Ön denetleyiciye(Dispatcher Servlet) gönderir.
+• Ön denetleyicinin ismi Dispatcher Servlet’tir, görevi, isteği / request ilgili denetleyiciye göndermektir.
+• İlgili denetleyici kodu, geliştiriciler tarafından yazılan ve iş mantığını içeren koddur.
+• Denetleyici daha sonra modeli hazırlayacak ve sonraki işlemler için Ön denetleyiciye gönderecektir.
+• Ön denetleyici daha sonra bu modeli, web sayfasında görüntülenmesi gereken HTML kodunu ve verileri içeren görünüm şablonuna gönderir.
+
+Denetleyici / Kontrolcü / Controller:
+
+Denetleyici sınıfları, geliştiriciler tarafından oluşturulur.
+• İş mantığını içerir ve isteği işler.
+• Veri tabanından ve diğer hizmetlerden veri depolar ve alır.
+• Verileri modelin içine koyar ve modeli de View / HTML’nin içine koyar.
+Model:
+
+• Model, yalnızca verileri içeren bir java nesnesidir.
+• Veri tabanından veya web hizmetinden verileri depolamamıza ve almamıza yardımcı olacaktır.
+
+View — Şablon Motorları / Template Engine:
+
+Spring MVC esnektir, şablon motorunu destekler.
+• En sık kullanılan şablon motorları JSP ve Thymeleaf’tir.
+• Geliştirici, Model’de bulunan verileri görüntülemek için görünüm şablonunu oluşturur.
+
+Spring MVC Faydaları:
+
+Java’da web uygulamaları oluşturmanın en iyi ve en popüler yoludur.
+• Bir ton yeniden kullanılabilir UI / User Interface / kullanıcı arayüzü bileşeninden yararlanır.
+• Web istekleri / web request için uygulama durumunu yönetmemize yardımcı olur.
+• Form verilerini doğrulayarak, dönüştürerek işler / elden geçirir.
+Bu makale için bu kadar, beğendiyseniz lütfen arkadaşlarınız ve meslektaşlarınızla paylaşın ve ayrıca bunu sosyal medya profillerinizde paylaşınız.
