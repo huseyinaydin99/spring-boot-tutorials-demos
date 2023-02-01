@@ -56,6 +56,8 @@ Spring Boot projesini nasıl oluşturulur?
 Spring ekibi, Spring Boot başlangıç ​​projesi oluşturmak için çevrimiçi bir web aracı sağlar. Spring başlatıcı aracını bu URL’de bulabilirsiniz https://start.spring.io/
 Spring boot projesi oluşturmak için tek yapmanız gereken proje detaylarını, Spring Boot sürümünü girmek ve bağımlılıkları eklemek ve generate / üret butonuna basmak.
 
+---
+
 #### Spring MVC Nedir?
 
 Spring MVC, Java’da web uygulamaları oluşturmak için bir framework / çerçeve / çatı) dır.
