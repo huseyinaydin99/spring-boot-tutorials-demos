@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Facebook'a Bağlan</title>
+</head>
+<body>
+	<h1>
+		Merhaba gardaş, hoşgeldin. Profil ismin: <span th:text="${profileName}"></span>!
+	</h1>
+	<h4>İşte gönderilerin.</h4>
+
+	<div th:each="post:${posts}">
+		<b th:text="${post.from.name}"></b>
+		<p th:text="${post.message}">Mesaj Yazısı / Göderisi</p>
+		<img th:if="${post.picture}" th:src="${post.picture}" />
+		<hr />
+	</div>
+</body>
+</html>

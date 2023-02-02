@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="tr.com.huseyinaydin"/> 
+
+	<bean id="smsService" class="tr.com.huseyinaydin.service.SmsService" />
+	<bean id="emailService" class="tr.com.huseyinaydin.service.EmailService" />
+	<bean id="fileService" class="tr.com.huseyinaydin.service.FileService" />
+	<bean id="messageProcessor" class="tr.com.huseyinaydin.service.MessageProcessorImpl">
+		<property name="myFileService" ref="fileService"></property>
+	</bean>
+</beans>
