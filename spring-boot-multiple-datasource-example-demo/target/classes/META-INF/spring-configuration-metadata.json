@@ -1,0 +1,18 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "tr.com.huseyinaydin.multiple.ds.api.config.BookDBConfig",
+      "name": "spring.book.datasource",
+      "sourceMethod": "public javax.sql.DataSource dataSource() ",
+      "type": "javax.sql.DataSource"
+    },
+    {
+      "sourceType": "tr.com.huseyinaydin.multiple.ds.api.config.UserDBConfig",
+      "name": "spring.user.datasource",
+      "sourceMethod": "public javax.sql.DataSource dataSource() ",
+      "type": "javax.sql.DataSource"
+    }
+  ],
+  "properties": []
+}

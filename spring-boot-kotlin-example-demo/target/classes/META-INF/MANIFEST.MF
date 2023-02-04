@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: Huseyin_Aydin
+Build-Jdk: 17.0.5
+Implementation-Title: spring-boot-kotlin
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.example
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-ko
+ tlin/
+Created-By: Maven Integration for Eclipse
+

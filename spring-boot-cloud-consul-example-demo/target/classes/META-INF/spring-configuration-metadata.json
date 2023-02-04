@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "my",
+      "type": "tr.com.huseyinaydin.consul.api.MyConfig",
+      "sourceType": "tr.com.huseyinaydin.consul.api.MyConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "my.password",
+      "type": "java.lang.String",
+      "sourceType": "tr.com.huseyinaydin.consul.api.MyConfig"
+    },
+    {
+      "name": "my.username",
+      "type": "java.lang.String",
+      "sourceType": "tr.com.huseyinaydin.consul.api.MyConfig"
+    }
+  ],
+  "hints": []
+}

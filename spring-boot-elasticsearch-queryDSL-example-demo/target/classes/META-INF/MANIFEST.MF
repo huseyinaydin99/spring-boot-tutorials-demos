@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: Huseyin_Aydin
+Build-Jdk: 17.0.4.1
+Implementation-Title: spring-boot-elasticserach-query-dsl-example-demo
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: tr.com.huseyinaydin
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-el
+ asticserach-query-dsl-example-demo/
+Created-By: Maven Integration for Eclipse
+
