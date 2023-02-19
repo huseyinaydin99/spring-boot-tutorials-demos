@@ -1,0 +1,1 @@
+CREATE SCHEMA IF NOT EXISTS `huseyin_aydin_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;

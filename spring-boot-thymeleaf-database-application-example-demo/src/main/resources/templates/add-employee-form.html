@@ -1,0 +1,34 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Çalışan ekleme şeysi(Zımbırtısı)</title>
+		
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	<body>
+		
+		<div class="container">
+		
+			<h3>Yeni çalışanı ekle/h3>
+			<hr/>
+			
+			<form th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+				
+				<input type="text" th:field="*{name}" class="form-control col-4 mb-4" placeholder="Enter Name" />
+				
+				<input type="text" th:field="*{email}" class="form-control col-4 mb-4" placeholder="Enter email" />
+				
+				<input type="text" th:field="*{department}" class="form-control col-4 mb-4" placeholder="Enter department" />
+				
+				<button type="submit" class="btn btn-primary col-2">Kaydet</button>
+				<input type="hidden" th:field="*{id}" />
+				
+			</form>
+			<hr/>
+			<a th:href="@{/list}">Çalışan listesine ger dönüver.</a>
+		</div>
+	</body>
+</html>

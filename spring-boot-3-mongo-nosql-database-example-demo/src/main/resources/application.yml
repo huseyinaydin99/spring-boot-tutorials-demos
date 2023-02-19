@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      username: huseyinaydin99
+      password: 123toor_
+      host: localhost
+      port: 27017
+      database: huseyindbnosql
+      authentication-database: admin

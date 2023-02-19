@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-kotlin-crud-master/spring-kotlin-crud.iml" filepath="$PROJECT_DIR$/spring-kotlin-crud-master/spring-kotlin-crud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-kotlin-crud-example-demo.iml" filepath="$PROJECT_DIR$/.idea/spring-kotlin-crud-example-demo.iml" />
+    </modules>
+  </component>
+</project>

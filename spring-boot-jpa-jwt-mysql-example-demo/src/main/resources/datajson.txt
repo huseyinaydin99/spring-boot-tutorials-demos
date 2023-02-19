@@ -1,0 +1,27 @@
+POST ->   http://localhost:8082/api/auth/signup
+{
+    "name": "Hüseyin Aydın",
+    "username": "huseyinaydin",
+    "email": "truncatecreate@gmail.com",
+    "role": ["user"],
+    "password": "toor"
+}
+
+
+POST ->   http://localhost:8082/api/auth/signup
+{
+    "name": "Ömer Faruk",
+    "username": "Omer Faruk",
+    "email": "cinomerbalarisi@gmail.com",
+    "role": ["user","pm"],
+    "password": "toor"
+}
+
+POST ->   http://localhost:8082/api/auth/signup
+{
+    "name": "Rümeysa",
+    "username": "rumissa",
+    "email": "rumisaa99@gmail.com",
+    "role": ["admin"],
+    "password": "toor"
+}
