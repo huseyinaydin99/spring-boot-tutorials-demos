@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Huseyin_Aydin
+Build-Jdk: 17.0.4.1
+Implementation-Title: spring-boot-websocket-example-demo
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: tr.com.huseyinaydin
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-boot-websocket-example-demo
+Created-By: Maven Integration for Eclipse
+
