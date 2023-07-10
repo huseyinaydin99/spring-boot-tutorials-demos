@@ -1,0 +1,9 @@
+spring:
+  elasticsearch:
+    uris: 127.0.0.1:9200
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v1/api-docs

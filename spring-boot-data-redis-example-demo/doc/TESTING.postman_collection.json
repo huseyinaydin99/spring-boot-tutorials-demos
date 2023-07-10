@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "5b58dcb5-3ed4-4683-80e1-705f98f15ea8",
+		"name": "TESTING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Spring Redis Cache",
+			"item": [
+				{
+					"name": "Delete Emp",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}8181/emp/102299",
+							"host": [
+								"{{local}}8181"
+							],
+							"path": [
+								"emp",
+								"102299"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Emps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}8181/emp/all",
+							"host": [
+								"{{local}}8181"
+							],
+							"path": [
+								"emp",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Emp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"employee_no\": \"102299\",\r\n    \"first_name\": \"Jala\",\r\n    \"mid_init\": \"****\",\r\n    \"last_name\": \"Makav\",\r\n    \"work_dept\": \"IT\",\r\n    \"phone_no\": \"0892547**\",\r\n    \"hired_date\": \"2012-02-10T17:00:00.000+00:00\",\r\n    \"job\": \"Backend\",\r\n    \"ed_level\": \"8\",\r\n    \"sex\": \"M\",\r\n    \"birth_date\": \"1990-02-10T17:00:00.000+00:00\",\r\n    \"salary\": 250000.00,\r\n    \"bonus\": 123000.0,\r\n    \"commission\": 10000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}8181/emp",
+							"host": [
+								"{{local}}8181"
+							],
+							"path": [
+								"emp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Emp No local",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "emp",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"percentage_range\": 86\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8181/emp?empNo=102298",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8181",
+							"path": [
+								"emp"
+							],
+							"query": [
+								{
+									"key": "empNo",
+									"value": "102298"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Emp No",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "emp",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"percentage_range\": 86\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8181/emp?empNo=102298",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8181",
+							"path": [
+								"emp"
+							],
+							"query": [
+								{
+									"key": "empNo",
+									"value": "102298"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Spring Data Redis",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"employee_id\": \"11130042\",\r\n    \"first_name\": \"Jam\",\r\n    \"last_name\": \"Man\",\r\n    \"gender\": \"M\",\r\n    \"work_dept\": \"IT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}8080/save",
+							"host": [
+								"{{local}}8080"
+							],
+							"path": [
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"employee_id\": \"0230042\",\r\n    \"first_name\": \"Theara\",\r\n    \"last_name\": \"Man\",\r\n    \"gender\": \"M\",\r\n    \"work_dept\": \"IT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}8080/update",
+							"host": [
+								"{{local}}8080"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}8080/empl/id?id=2",
+							"host": [
+								"{{local}}8080"
+							],
+							"path": [
+								"empl",
+								"id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Empl",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}8080/empl/list",
+							"host": [
+								"{{local}}8080"
+							],
+							"path": [
+								"empl",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by list id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employees\":[\r\n        2\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}8080/empl/find/id",
+							"host": [
+								"{{local}}8080"
+							],
+							"path": [
+								"empl",
+								"find",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all empl as Map",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}8080/empl/all",
+							"host": [
+								"{{local}}8080"
+							],
+							"path": [
+								"empl",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}8080/delete?id=2",
+							"host": [
+								"{{local}}8080"
+							],
+							"path": [
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Income tax calculation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resident\": true,\r\n    \"salary\": 2500000,\r\n    \"currency\": \"KHR\",\r\n    \"exchange_rate\": 4050,\r\n    \"fringe_benefit\": 0\r\n}\r\n= salary * tax (0 -> 20%) - CD (KHR) => resident\r\n= salary * 20% => non resident",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}8080/net-income/calculation",
+					"host": [
+						"{{local}}8080"
+					],
+					"path": [
+						"net-income",
+						"calculation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

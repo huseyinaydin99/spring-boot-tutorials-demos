@@ -1,0 +1,34 @@
+import dto.tr.com.huseyinaydin.StudentRequest;
+
+global dto.tr.com.huseyinaydin.StudentResponse studentResp;
+
+dialect "mvel"
+
+rule "Percentage Range 93-100"
+    when
+        StudentRequest(percentageRange >= 93)
+    then
+        System.out.println("Grade A, GPA 4");
+        studentResp.setGpa(4);
+        studentResp.setGrade("A");
+        studentResp.setDesc("Outstanding attainment of course goals");
+end
+
+rule "Percentage Range 90-92.99"
+    when
+        StudentRequest(percentageRange >= 90 && percentageRange <= 92.99)
+    then
+        System.out.println("Grade A-, GPA 3.67");
+        studentResp.setGpa(3.67);
+        studentResp.setGrade("A-");
+        studentResp.setDesc("Superior attainment of course goals");
+end
+rule "Percentage Range 87-89.99"
+    when
+        StudentRequest(percentageRange >= 87 && percentageRange <= 89.99)
+    then
+        System.out.println("Grade B+, GPA 3.33");
+        studentResp.setGpa(3.33);
+        studentResp.setGrade("B+");
+        studentResp.setDesc("\tVery good attainment of course goals");
+end

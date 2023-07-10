@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code</title>
+</head>
+<style>
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15%;
+  }
+</style>
+<body>
+
+  <div style="width: 90%">
+    <img th:src="${'data:image/png;base64,' + qrcode}" alt="QR Code" height="250" width="250">
+  </div>
+
+</body>
+</html>
