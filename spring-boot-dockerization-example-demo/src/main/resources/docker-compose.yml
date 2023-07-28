@@ -1,0 +1,16 @@
+RUN Docker görüntüsünün oluşturma işlemi sırasında bir komutu yürütmek için kullanılır.
+EKLE Ana makineden yeni docker görüntüsüne bir dosya kopyalayın.
+Dosya için bir URL kullanma seçeneği vardır, docker daha sonra bu dosyayı hedef dizine indirir.
+ENV Bir ortam değişkeni tanımlayın.
+CMD Docker görüntüsünden yeni bir kapsayıcı oluşturduğumuzda komutları yürütmek için kullanılır.
+ENTRYPOINT Konteyner çalışırken yürütülecek varsayılan komutu tanımlayın.
+WORKDIR CMD komutunun çalıştırılması için yönergedir.
+KULLANICI Görüntüyle oluşturulan kapsayıcı için kullanıcıyı veya UID'yi ayarlayın.
+VOLUME Konteyner ve ana makine arasında erişimi/bağlı dizini etkinleştirin.
+Şimdi ilk docker dosyamızı oluşturmaya başlayalım.
+
+FROM java:8-jdk-alpine
+COPY ./target/app.jar /usr/app/
+WORKDIR /usr/app
+RUN sh -c 'touch app.jar'
+ENTRYPOINT ["java","-jar”,”app.jar"]
