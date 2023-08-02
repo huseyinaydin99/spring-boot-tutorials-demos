@@ -1,10 +1,7 @@
 # spring-boot-tutorials-demos
 Bir ton videolu kurs izliyorum. Kendimi çok geliştirmek istiyorum. Gelişmek için bir ton örnek yapıyorum. Diğer insanların kodlarını inceliyorum. Bütün yaptığım kodları buraya işleyeceğim(commit + push). 
-![IMG_20230801_210732_614](https://github.com/huseyinaydin99/spring-boot-tutorials-demos/assets/16438043/57a257cf-9c6c-4cde-9110-3b246a463768)
-![20230625_004500](https://github.com/huseyinaydin99/spring-boot-tutorials-demos/assets/16438043/b9d254e9-780c-4a98-9358-630531dff82f)
-
-
 ![Spring Boot Java](spring-boot-java.jpg "Spring Boot Java")
+![20230625_004500](https://github.com/huseyinaydin99/spring-boot-tutorials-demos/assets/16438043/b9d254e9-780c-4a98-9358-630531dff82f)
 
 ##### Spring Nedir?
 Spring nedir?
