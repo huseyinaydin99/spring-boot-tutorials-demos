@@ -1,5 +1,5 @@
 # spring-boot-tutorials-demos
-Bir ton videolu kurs izliyorum. Kendimi çok geliştirmek istiyorum. Gelişmek için bir ton örnek yapıyorum. Diğer insanların kodlarını inceliyorum. Bütün yaptığım kodları buraya işleyeceğim(commit + push).
+Bir ton videolu kurs izliyorum. Kendimi çok geliştirmek istiyorum. Gelişmek için bir ton örnek yapıyorum. Bütün yaptığım kodları buraya işleyeceğim(commit + push).
 
 ![spring_boot](https://github.com/huseyinaydin99/spring-boot-tutorials-demos/assets/16438043/f79e471b-2445-46e0-a556-32b4c7227c67)
 ![Spring Boot Java](spring-boot-java.jpg "Spring Boot Java")
