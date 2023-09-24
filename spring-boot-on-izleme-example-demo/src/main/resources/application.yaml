@@ -1,0 +1,15 @@
+server:
+  port: 8181
+
+
+
+discount:
+  offer:
+    price: 25
+
+myList:
+  - Elma
+  - Armut
+  - Mahmut
+  - Kiraz
+  - Muz
