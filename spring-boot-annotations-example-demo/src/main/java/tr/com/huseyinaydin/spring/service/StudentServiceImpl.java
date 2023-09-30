@@ -1,5 +1,8 @@
 package tr.com.huseyinaydin.spring.service;
 
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import tr.com.huseyinaydin.spring.entity.Student;
 import tr.com.huseyinaydin.spring.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +29,7 @@ public class StudentServiceImpl implements StudentService{
     @Autowired
     private StudentRepository repository;
 
+    @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
     @Override
     public Student addStudent(Student student) {
         return repository.save(student);

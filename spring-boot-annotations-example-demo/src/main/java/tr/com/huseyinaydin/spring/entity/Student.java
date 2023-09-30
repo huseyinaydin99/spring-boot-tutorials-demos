@@ -35,4 +35,8 @@ public class Student {
     private int rollNo;
     @Column(name = "DEPT")
     private String dept;
+
+    @OneToMany(targetEntity = Course.class, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Student_FK")
+    private List<Course> courses;
 }
