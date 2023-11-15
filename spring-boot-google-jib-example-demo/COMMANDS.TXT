@@ -1,0 +1,2 @@
+mvn clean compile jib:build
+docker run -it -p 9090:8080 huseyin11/spring-boot-google-jib-image-example-demo
