@@ -1,6 +1,6 @@
 # spring-boot-virtual-thread-example-demo
 
-## Apache Jmeter ile Test sonuçları :
+## Apache JMeter ile Test sonuçları :
 ![jmeter8](https://github.com/huseyinaydin99/spring-boot-tutorials-demos/assets/16438043/ba8bbe1a-6019-4eb4-9211-48df058343a8)
 ![jmeter3](https://github.com/huseyinaydin99/spring-boot-tutorials-demos/assets/16438043/7ad86a60-ab3f-4883-a2b6-9e25a3c06d2f)
 ![jmeter2](https://github.com/huseyinaydin99/spring-boot-tutorials-demos/assets/16438043/1f20d417-91ec-4fa6-b2ab-3cb5a808a483)
