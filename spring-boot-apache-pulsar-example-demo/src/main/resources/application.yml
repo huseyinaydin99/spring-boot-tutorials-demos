@@ -1,0 +1,18 @@
+server:
+  port: 9191
+
+spring:
+  pulsar:
+    client:
+      service-url: pulsar://localhost:6650
+    producer:
+      topic-name1: hs-topik1
+      topic-name2: hs-topik2
+    consumer:
+      subscription:
+        name: sub1
+    defaults:
+      type-mappings:
+        - messageType: tr.com.huseyinaydin.dto.CustomerDto
+          schema-info:
+            schema-type: JSON

@@ -1,0 +1,31 @@
+version: '3.5'
+
+services:
+  pulsar:
+    image: "apachepulsar/pulsar:2.10.1"
+    command: bin/pulsar standalone
+    environment:
+      PULSAR_MEM: "-Xms512m -Xmx512m -XX:MaxDirectMemorySize=1g"
+    ports:
+      - "6650:6650"
+      - "8080:8080"
+    restart: unless-stopped
+    networks:
+      - pulsar_network
+
+  pulsar-manager:
+    image: "apachepulsar/pulsar-manager:v0.2.0"
+    ports:
+      - "9527:9527"
+      - "7750:7750"
+    depends_on:
+      - pulsar
+    environment:
+      SPRING_CONFIGURATION_FILE: /pulsar-manager/pulsar-manager/application.properties
+    networks:
+      - pulsar_network
+
+networks:
+  pulsar_network:
+    name: pulsar_network
+    driver: bridge
