@@ -1,0 +1,26 @@
+server:
+  port: 9191
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: huseyinbaba-group
+      auto-offset-reset: latest
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: tr.com.huseyinaydin.dto
+
+##
+#spring:
+#  kafka:
+#    consumer:
+#      enable-auto-commit: false
