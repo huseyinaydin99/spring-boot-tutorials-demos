@@ -1,0 +1,24 @@
+cloud:
+  aws:
+    credentials:
+      access-key: ilgili_erişim_anahtarı
+      secret-key: gizli_anahtar
+    region:
+      static: us-east-2
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: huseyin_baba_depolama_alanı
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+server:
+  port: 9090
