@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerçek Zamanlı Bildirimler</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+</head>
+<body>
+<h1>Gerçek Zamanlı Bildirimler</h1>
+<div id="notifications"></div>
+
+<script>
+    let stompClient = null;
+
+    function connect() {
+        console.log('connect metodu');
+
+        const socket = new SockJS('http://localhost:8080/ws');  //websocket adresi ve socket nesnesi
+        stompClient = Stomp.over(socket); // soket istemcisi
+
+        stompClient.connect({}, function (frame) {
+            console.log('Bağlandı: ' + frame);  // bağlantı başarılı loglama
+            stompClient.subscribe('/topic/notifications', function (message) {
+                showNotification(message.body);  // gelen mesajları ekrana bas
+            });
+        }, function (error) {
+            console.error('WebSocket bağlantı hatası: ' + error);  // bağlantı başarısız loglama
+        });
+    }
+
+    function showNotification(message) {
+        const notifications = document.getElementById('notifications');
+        const notification = document.createElement('p');
+        notification.textContent = message;
+        notifications.appendChild(notification);
+    }
+
+    connect();
+</script>
+</body>
+</html>
