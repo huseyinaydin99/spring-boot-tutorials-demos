@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time Notifications</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+</head>
+<body>
+<h1>Gerçek Zamanlı Bildirimler</h1>
+<div id="notifications"></div>
+<input type="text" id="message" placeholder="Mesajını giriver hacım...">
+<button onclick="sendMessage()">Gönderiver Hacım</button>
+
+<script>
+    let stompClient = null;
+
+    function connect() {
+        const socket = new SockJS('http://localhost:8080/ws');  // websocket url'i ve socket objesi
+        stompClient = Stomp.over(socket); //istemci
+
+        stompClient.connect({}, function (frame) {
+            console.log('Bağlanıldı: ' + frame);  // websocket bağlantı başarılı logu
+            stompClient.subscribe('/topic/notifications', function (message) {
+                showNotification(message.body);  // gelen mesajı yazdırır.
+            });
+        }, function (error) {
+            console.error('WebSocket connection error: ' + error);  // websocket bağlantı başarısız logu
+        });
+    }
+
+    function sendMessage() {
+        const message = document.getElementById('message').value;
+        if (stompClient && stompClient.connected) {
+            stompClient.send('/app/sendMessage', {}, message);
+            console.log('Mesaj gönderildi:', message);
+        } else {
+            console.error('WebSocket bağlantısı kurulumadı.');
+        }
+    }
+
+    function showNotification(message) {
+        const notifications = document.getElementById('notifications');
+        const notification = document.createElement('p');
+        notification.textContent = message;
+        notifications.appendChild(notification);
+    }
+
+    connect();
+</script>
+</body>
+</html>
