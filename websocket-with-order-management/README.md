@@ -11,3 +11,7 @@ WebSocket bağlantısı kurulduğunda, sunucu, her sipariş durumu güncellemesi
 Sunucu tarafında, Spring Boot kullanarak WebSocket’i entegre ettim. Spring Boot'ta WebSocket yapılandırmasını aktifleştirdim ve gerekli endpoint'leri oluşturduk. Sipariş durumu güncellemelerini sunucudan istemcilere göndermek için Spring STOMP kullanarak verimli bir şekilde haberleşme sağladım.
 
 Sonuç olarak, bu proje ile gerçek zamanlı sipariş güncellemeleri ve kullanıcı dostu bir arayüz oluşturdum. Proje kullanıcıların siparişlerini hızlı ve etkin bir şekilde takip etmelerini sağlıyor. Her şey sorunsuz şekilde çalışıyor ve kullanıcılar siparişlerinin hangi aşamada olduğunu anlık olarak takip edebiliyorlar.
+
+#### Görseller:
+![1](https://github.com/user-attachments/assets/eb450949-448a-4a8f-89ad-36d890c91292)
+![2](https://github.com/user-attachments/assets/db9cfe4c-246c-4cb6-ae19-d54f52ef2031)
