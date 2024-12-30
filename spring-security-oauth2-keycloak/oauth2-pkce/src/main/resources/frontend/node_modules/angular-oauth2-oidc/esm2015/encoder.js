@@ -1,0 +1,18 @@
+/**
+ * This custom encoder allows charactes like +, % and / to be used in passwords
+ */
+export class WebHttpUrlEncodingCodec {
+    encodeKey(k) {
+        return encodeURIComponent(k);
+    }
+    encodeValue(v) {
+        return encodeURIComponent(v);
+    }
+    decodeKey(k) {
+        return decodeURIComponent(k);
+    }
+    decodeValue(v) {
+        return decodeURIComponent(v);
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW5jb2Rlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL2xpYi9zcmMvZW5jb2Rlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTs7R0FFRztBQUNILE1BQU0sT0FBTyx1QkFBdUI7SUFDbEMsU0FBUyxDQUFDLENBQVM7UUFDakIsT0FBTyxrQkFBa0IsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUMvQixDQUFDO0lBRUQsV0FBVyxDQUFDLENBQVM7UUFDbkIsT0FBTyxrQkFBa0IsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUMvQixDQUFDO0lBRUQsU0FBUyxDQUFDLENBQVM7UUFDakIsT0FBTyxrQkFBa0IsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUMvQixDQUFDO0lBRUQsV0FBVyxDQUFDLENBQVM7UUFDbkIsT0FBTyxrQkFBa0IsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUMvQixDQUFDO0NBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBIdHRwUGFyYW1ldGVyQ29kZWMgfSBmcm9tICdAYW5ndWxhci9jb21tb24vaHR0cCc7XHJcbi8qKlxyXG4gKiBUaGlzIGN1c3RvbSBlbmNvZGVyIGFsbG93cyBjaGFyYWN0ZXMgbGlrZSArLCAlIGFuZCAvIHRvIGJlIHVzZWQgaW4gcGFzc3dvcmRzXHJcbiAqL1xyXG5leHBvcnQgY2xhc3MgV2ViSHR0cFVybEVuY29kaW5nQ29kZWMgaW1wbGVtZW50cyBIdHRwUGFyYW1ldGVyQ29kZWMge1xyXG4gIGVuY29kZUtleShrOiBzdHJpbmcpOiBzdHJpbmcge1xyXG4gICAgcmV0dXJuIGVuY29kZVVSSUNvbXBvbmVudChrKTtcclxuICB9XHJcblxyXG4gIGVuY29kZVZhbHVlKHY6IHN0cmluZyk6IHN0cmluZyB7XHJcbiAgICByZXR1cm4gZW5jb2RlVVJJQ29tcG9uZW50KHYpO1xyXG4gIH1cclxuXHJcbiAgZGVjb2RlS2V5KGs6IHN0cmluZyk6IHN0cmluZyB7XHJcbiAgICByZXR1cm4gZGVjb2RlVVJJQ29tcG9uZW50KGspO1xyXG4gIH1cclxuXHJcbiAgZGVjb2RlVmFsdWUodjogc3RyaW5nKSB7XHJcbiAgICByZXR1cm4gZGVjb2RlVVJJQ29tcG9uZW50KHYpO1xyXG4gIH1cclxufVxyXG4iXX0=

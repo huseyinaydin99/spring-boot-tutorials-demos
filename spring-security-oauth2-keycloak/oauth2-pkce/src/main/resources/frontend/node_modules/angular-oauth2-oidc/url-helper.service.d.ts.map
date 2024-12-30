@@ -1,0 +1,1 @@
+{"version":3,"file":"url-helper.service.d.ts","sources":["url-helper.service.d.ts"],"names":[],"mappings":";AAAA;AACA;AACA;;;AACA","sourcesContent":["export declare class UrlHelperService {\r\n    getHashFragmentParams(customHashFragment?: string): object;\r\n    parseQueryString(queryString: string): object;\r\n}\r\n"]}

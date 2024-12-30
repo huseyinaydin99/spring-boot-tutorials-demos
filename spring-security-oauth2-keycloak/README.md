@@ -1,0 +1,5 @@
+#### oauth2-authorization
+Keycloak ile kimlik doğrulama entegrasyonunu Spring Boot uygulamamda başarıyla gerçekleştirdim. İlk olarak, Keycloak sunucusunu Docker üzerinde çalıştırdım ve gerekli konfigürasyonları tamamladım. Ardından, Spring Boot projemde keycloak-spring-boot-starter bağımlılığını ekleyerek Keycloak ile entegrasyon sağladım. application.properties dosyasında Keycloak yapılandırmasını yaparak, doğru realm, client ve secret bilgilerini belirledim. Spring Security yapılandırması ile güvenlik ayarlarını yaptım ve başarılı giriş sonrası yönlendirme işlemi için bir success URL belirledim. Son olarak, Keycloak ile kullanıcı doğrulamasının ardından Spring Boot uygulamamda korunan sayfalara erişimi test ederek entegrasyonu tamamladım.
+Keycloak kimlik oauth2 doğrulama ve yetkilendirme.
+Keycloak ile oauth2 Spring Boot ve Angular entegrasyonu.
+Keycloak Access Token, Refresh Token ve GitHub OAuth2.
