@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>Merhabalar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="/postrequest.js"></script>
+	<script src="/getrequest.js"></script>
+</head>
+
+<body>
+	<div id="postResultDiv" align="center"></div>
+	<div class="container">
+		<h2>Formu Doldurunuz</h2>
+		<form id="bookForm">
+			<div class="form-group">
+				<label for="bookId">Kitap ID:</label>
+				<input type="text" class="form-control" id="bookId" placeholder="Kitap Id giriniz..." name="bookId">
+			</div>
+			<div class="form-group">
+				<label for="bookName">Kitap Adi:</label>
+				<input type="text" class="form-control" id="bookName" placeholder="Kitap adi giriniz..." name="bookName">
+			</div>
+			<div class="form-group">
+				<label for="author">Yazar Adi:</label>
+				<input type="text" class="form-control" id="author" placeholder="Yazar adi giriniz..." name="author">
+			</div>
+			<div class="form-group form-check">
+				<label class="form-check-label">
+					<input class="form-check-input" type="checkbox" name="remember">
+					Bilgilerimi hatirla
+				</label>
+			</div>
+			<button type="submit" class="btn btn-primary">Kaydet</button>
+		</form>
+		<br />
+		<div class="col-sm-7" style="margin: 20px 0px 20px 0px">
+			<button id="getALlBooks" type="button" class="btn btn-primary">
+				Kitaplari Gor
+			</button>
+			<div id="getResultDiv" style="padding: 20px 10px 20px 50px">
+				<ul class="list-group">
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
