@@ -1,0 +1,41 @@
+2025-01-06 13:31:21,356 DEBUG - Starting ServiceWrapper in the CLI mode
+2025-01-06 13:31:21,811 INFO  - Installing the service with id 'spring-boot-tr.com.huseyinaydin'
+2025-01-06 13:31:21,862 FATAL - WMI Operation failure: AccessDenied
+WMI.WmiException: AccessDenied
+   konum: WMI.WmiRoot.BaseHandler.CheckError(ManagementBaseObject result)
+   konum: WMI.WmiRoot.ClassHandler.Invoke(Object proxy, MethodInfo method, Object[] args)
+   konum: winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   konum: winsw.WrapperService.Main(String[] args)
+2025-01-06 13:32:29,697 DEBUG - Starting ServiceWrapper in the CLI mode
+2025-01-06 13:32:30,070 INFO  - Installing the service with id 'spring-boot-tr.com.huseyinaydin'
+2025-01-06 13:32:30,082 DEBUG - Completed. Exit code is 0
+2025-01-06 13:32:51,457 DEBUG - Starting ServiceWrapper in the CLI mode
+2025-01-06 13:32:51,867 INFO  - Installing the service with id 'spring-boot-tr.com.huseyinaydin'
+2025-01-06 13:32:51,870 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'spring-boot-tr.com.huseyinaydin' already exists
+   konum: winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   konum: winsw.WrapperService.Main(String[] args)
+2025-01-06 13:33:10,742 DEBUG - Starting ServiceWrapper in the CLI mode
+2025-01-06 13:33:11,105 INFO  - Installing the service with id 'spring-boot-tr.com.huseyinaydin'
+2025-01-06 13:33:11,107 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'spring-boot-tr.com.huseyinaydin' already exists
+   konum: winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   konum: winsw.WrapperService.Main(String[] args)
+2025-01-06 13:33:34,235 DEBUG - Starting ServiceWrapper in the CLI mode
+2025-01-06 13:33:34,600 INFO  - Installing the service with id 'spring-boot-tr.com.huseyinaydin2'
+2025-01-06 13:33:34,611 DEBUG - Completed. Exit code is 0
+2025-01-06 13:34:41,856 INFO  - Starting ServiceWrapper in the service mode
+2025-01-06 13:34:42,116 INFO  - Starting java -jar winservice-application-up.jar
+2025-01-06 13:34:47,502 INFO  - Started process 15512
+2025-01-06 13:34:47,505 DEBUG - Forwarding logs of the process System.Diagnostics.Process (java) to winsw.DefaultLogAppender
+2025-01-06 13:36:03,111 INFO  - Stopping spring-boot-tr.com.huseyinaydin2
+2025-01-06 13:36:03,112 DEBUG - ProcessKill 15512
+2025-01-06 13:36:03,274 INFO  - Found child process: 15696 Name: conhost.exe
+2025-01-06 13:36:03,314 INFO  - Stopping process 15696
+2025-01-06 13:36:03,318 INFO  - Send SIGINT 15696
+2025-01-06 13:36:03,319 WARN  - SIGINT to 15696 failed - Killing as fallback
+2025-01-06 13:36:03,321 INFO  - Stopping process 15512
+2025-01-06 13:36:03,325 INFO  - Send SIGINT 15512
+2025-01-06 13:36:03,325 WARN  - SIGINT to 15512 failed - Killing as fallback
+2025-01-06 13:36:03,327 INFO  - Finished spring-boot-tr.com.huseyinaydin2
+2025-01-06 13:36:03,329 DEBUG - Completed. Exit code is 0

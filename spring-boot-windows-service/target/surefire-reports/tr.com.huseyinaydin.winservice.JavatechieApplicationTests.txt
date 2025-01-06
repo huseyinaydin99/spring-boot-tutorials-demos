@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: tr.com.huseyinaydin.winservice.JavatechieApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.973 s - in tr.com.huseyinaydin.winservice.JavatechieApplicationTests
