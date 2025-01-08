@@ -1,0 +1,26 @@
+# genel ayarlarım
+global:
+  scrape_interval:     15s # Veri toplama aralığını her 15 saniye olarak ayarla. Varsayılan 1 dakikadır.
+  evaluation_interval: 15s # Kuralları her 15 saniyede bir değerlendir. Varsayılan 1 dakikadır.
+  # scrape_timeout varsayılan global süre (10s) olarak ayarlandı.
+
+# Kuralları bir kez yükle ve global 'evaluation_interval' ayarına göre periyodik olarak değerlendir.
+rule_files:
+# - "first_rules.yml"
+# - "second_rules.yml"
+
+# Tek bir endpoint (uç nokta) içeren bir veri toplama yapılandırması:
+# Burada bu endpoint Prometheus'un kendisidir.
+scrape_configs:
+  # İş adı, bu yapılandırmadan toplanan her zaman serisi için `job=<job_name>` etiketi olarak eklenir.
+  - job_name: 'prometheus'
+    # metrics_path varsayılan olarak '/metrics' değerini alır.
+    # scheme varsayılan olarak 'http' değerini alır.
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'spring-actuator'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:8080']

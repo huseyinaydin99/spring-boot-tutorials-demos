@@ -1,0 +1,22 @@
+global:
+  scrape_interval:     15s   # Veri toplama aralığı her 15 saniye
+  evaluation_interval: 15s   # Kuralları her 15 saniyede bir değerlendir
+  # scrape_timeout varsayılan olarak 10s olarak ayarlandı.
+
+# Rule dosyaları
+rule_files:
+# - "first_rules.yml"
+# - "second_rules.yml"
+
+scrape_configs:
+  # Prometheus için yapılandırma
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']  # Prometheus servis ismi
+
+  # Spring Boot Actuator için yapılandırma
+  - job_name: 'spring-actuator'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['spring-boot-app:8080']  # Docker Compose servis adı

@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  # Spring Boot Servisi
+  spring-boot-app:
+    image: app  # Spring image ismi
+    build:
+      context: .  # Dockerfilebulunduğu dizin . bulunan klasörü temsil eder .. ise bir geri veya üst klasörü.
+    ports:
+      - "8080:8080"  # Spring Boot uygulaması 8080 portunu dışa açık.
+    networks:
+      - monitoring-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=production  # Gerekirse ortam profili.
+
+  # Prometheus Servisi
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - C:\prometheus.yml:/etc/prometheus/prometheus.yml  # Prometheus yapılandırma dosyası bağlama.
+    ports:
+      - "9090:9090"  # Prometheus UI'ı dışa açtım.
+    networks:
+      - monitoring-network
+
+  # Grafana Servisi
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"  # Grafana UI'ı dışa açtım.
+    networks:
+      - monitoring-network
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin  # Admin şifresini belirledim.
+    depends_on:
+      - prometheus
+
+networks:
+  monitoring-network:
+    driver: bridge
