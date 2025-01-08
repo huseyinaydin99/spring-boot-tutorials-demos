@@ -42,3 +42,17 @@ docker run -d -p 9090:9090 -v C:/prometheus.yml:/etc/prometheus/prometheus.yml -
 docker build -t spring-boot-app . --Dockerfile ile projemizi dockerize eder.
 docker run -d -p 8080:8080 spring-boot-app --Oluşan image'dan bir konteynır yaratarak o konteynırı çalıştırır.
 docker-compose up --build --Prometheus, Grafana ve Spring Boot'un birbirleri ile iletişim kurabilmesi için aynı ağ üzerinde çalışması gerekir. Bunun için docker compose ile aynı sanal ağ üzerinde çalıştırdım.
+
+### Görseller
+![Ekran görüntüsü 2025-01-08 152357](https://github.com/user-attachments/assets/c3cb4935-2fbf-4a0e-b05d-57550a7a94e0)
+![Ekran görüntüsü 2025-01-08 152053](https://github.com/user-attachments/assets/218808a8-9ff9-479f-bfd8-465c65e18d73)
+![Ekran görüntüsü 2025-01-08 141509](https://github.com/user-attachments/assets/f3235b14-15bd-4fb1-a96c-55a0ab4319be)
+![Ekran görüntüsü 2025-01-08 141453](https://github.com/user-attachments/assets/10f32095-1a5c-4503-ba19-679fd19382b4)
+![Ekran görüntüsü 2025-01-07 153710](https://github.com/user-attachments/assets/2747c02f-0670-4a8d-9c81-edd22808bd6e)
+![Ekran görüntüsü 2025-01-08 141436](https://github.com/user-attachments/assets/294a6f2d-27db-4893-af97-2ede79db14e3)
+![Ekran görüntüsü 2025-01-08 141421](https://github.com/user-attachments/assets/d9d3c0f1-0788-4b9f-9a1a-ce3ebae2cc9c)
+![Ekran görüntüsü 2025-01-08 141234](https://github.com/user-attachments/assets/e33b3967-89e5-4102-be0a-2f96e32bccd1)
+![Ekran görüntüsü 2025-01-08 140908](https://github.com/user-attachments/assets/d1e1c85e-16ed-499a-9258-35f737f832cb)
+![Ekran görüntüsü 2025-01-08 140607](https://github.com/user-attachments/assets/b1e01713-eace-437e-81e0-d878bfb924ae)
+![Ekran görüntüsü 2025-01-07 153534](https://github.com/user-attachments/assets/7901091f-825c-4216-aebf-500a74447cf8)
+![Ekran görüntüsü 2025-01-08 152608](https://github.com/user-attachments/assets/61d8512b-403b-4d70-96db-e644de61f60c)
