@@ -1,0 +1,5 @@
+# QRCode Okuma ve Yazma
+
+Bir gün oturdum, "Hadi bir QR kod işi yapayım," dedim ve başladım. İlk olarak bir sınıf yazdım, adını da "PaytmRequestBody" koydum. Kullanıcının adı, telefon numarası, hesap türü ve hesap numarası gibi bilgileri tutacak bir yapı oluşturdum. Sonra "QRCodeGenerator" sınıfını yazıp QR kod yazma ve okuma işlerini hallettim. Kullanıcının bilgilerini alıp QR koda dönüştürüyorum ve masaüstümde bir klasörde PNG formatında saklıyorum. QR kodu oluşturmak için "QRCodeWriter" ve "MatrixToImageWriter" kullandım. Dosya oluşturulduktan sonra bir mesaj veriyor, böylece işler yolunda mı, hemen anlaşılıyor.
+
+Sonra bu QR kodları okuyacak bir sistem ekledim. QR kodun içindeki bilgileri almak için önce QR kod dosyasını açıyorum, ardından "LuminanceSource" ve "BinaryBitmap" kullanarak içerikleri çözüyorum. Çözdüğüm bilgiyi ekrana yazdırıyorum, böylece kodun içindeki metni görebiliyoruz. Sonuç olarak, QR kod yazma ve okuma işini hem basit hem de etkili bir şekilde hallettim. Hem eğlendim hem de güzel bir şey ortaya çıkardım çok iyi oldu çokta gözel oldu walla! :-D
