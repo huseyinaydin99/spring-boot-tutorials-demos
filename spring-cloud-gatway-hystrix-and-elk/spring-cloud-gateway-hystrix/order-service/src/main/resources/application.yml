@@ -1,0 +1,12 @@
+server:
+  port: 9192
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  h2:
+    console:
+      enabled: true
+  application:
+    name: order-service
+logging:
+  file: C:/Users/Huseyin_Aydin/Desktop/oms.log

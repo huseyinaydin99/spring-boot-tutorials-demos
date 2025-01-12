@@ -1,0 +1,12 @@
+server:
+  port: 9191
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  h2:
+    console:
+      enabled: true
+  application:
+    name: payment-service
+logging:
+  file: C:/Users/Huseyin_Aydin/Desktop/oms.log
