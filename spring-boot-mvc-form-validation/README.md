@@ -1,0 +1,4 @@
+# spring-boot-mvc-form-validation
+
+Spring Boot kullanarak bir form doğrulama uygulaması geliştirdim. Proje, kullanıcıların isim, e-posta adresi ve telefon numarası gibi bilgilerini belirlenen kriterlere göre doğrulayan bir yapı içeriyor. Doğrulama için javax.validation kütüphanesini kullandım. Eğer bir kullanıcı geçersiz veri girerse, hata mesajları dinamik olarak form üzerinde gösteriliyor. Geçerli veri girildiğinde ise başarılı bir kayıt mesajı görüntüleniyor. Projede Thymeleaf şablon motorunu kullanarak kullanıcı dostu bir arayüz tasarladım. Form verilerinin sunucuya gönderilmesi ve doğrulama sonuçlarının kullanıcıya gösterilmesi süreçlerini tamamladım. Bootstrap ile formun görünümünü iyileştirdim ve uyumlu hale getirdim.
+Validasyon: İsim alanı için karakter sınırı, e-posta formatı doğrulaması, telefon numarası formatı gibi kurallar tanımladım.
