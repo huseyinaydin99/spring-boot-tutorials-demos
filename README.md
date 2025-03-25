@@ -1,4 +1,5 @@
 ﻿**1. Spring Boot'a Giriş**
+![257718894-b9d254e9-780c-4a98-9358-630531dff82f](https://github.com/user-attachments/assets/096ab16f-e12a-4e06-bf6d-3f297d371a96)
 
 **Spring Boot Nedir?**
 
@@ -3139,5 +3140,7 @@ Spring Boot her geçen gün gelişiyor. 🚀 Yapay zeka entegrasyonları, mikros
 **Hüseyin AYDIN**
 
 **Saygılarımla…**
+
+![257719642-f79e471b-2445-46e0-a556-32b4c7227c67](https://github.com/user-attachments/assets/b301911a-a0ca-4308-b18d-8cdc173a55b4)
 
 ![](Aspose.Words.389885ec-02fb-4710-b00a-2574dfa55b7b.023.jpeg "368188483_6500338493334684_3094840929516673646_n")
