@@ -201,6 +201,7 @@ Spring Boot projeleri, genelde Maven veya Gradle ile yönetilir. Ben Maven kulla
         </plugins>
     </build>
 </project>
+```
 
 Bu pom.xml dosyası, temel bir Spring Boot projesi için gerekli olan bağımlılıkları içerir. Spring Web RESTful web servisleri oluşturmak için, Spring Data JPA veritabanı işlemleri için, H2 Database ise hafif bir veritabanı olarak kullanılır. 🛠️
 
@@ -208,7 +209,7 @@ Bu pom.xml dosyası, temel bir Spring Boot projesi için gerekli olan bağıml
 
 Spring Boot projesi oluşturduğunda, temel olarak şu dizin yapısıyla karşılaşırsın:
 
-```
+```java
 src
 ├── main
 │   ├── java
@@ -303,6 +304,7 @@ Bu starter'ları pom.xml dosyasına eklemek çok kolaydır. İşte bir örnek:
         <scope>runtime</scope>
     </dependency>
 </dependencies>
+```
 
 Bu bağımlılıkları ekledikten sonra, Spring Boot otomatik olarak gerekli yapılandırmaları yapacaktır. 🛠️
 
@@ -506,7 +508,6 @@ Spring Boot, bu ortam değişkenlerini otomatik olarak algılar ve yapılandırm
 
 ```java
 @Service
-
 public class RandomNumberService {
 
     @Value("${random.number.min:0}")
@@ -823,31 +824,15 @@ public class Product {
 
 Bu sınıf, veritabanında bir tabloya karşılık geliyor. @Entity anotasyonu, bu sınıfın bir veritabanı tablosunu temsil ettiğini belirtiyor. @Id ve @GeneratedValue anotasyonları ise birincil anahtar (primary key) ve otomatik artan bir değer olduğunu gösteriyor.
 
+```java
 package tr.com.huseyinaydin.repository;
 
-//بسم الله الرحمن الرحيم
-
-/\*\*
-
- \*
-
- \* @author Huseyin_Aydin
-
- \* @since 1994
-
- \* @category Java, Spring Boot.
-
- \*
-
- \*/
-
 import tr.com.huseyinaydin.model.Product;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
 }
+```
 
 Bu repository, Spring Data JPA tarafından sağlanan JpaRepository arayüzünü genişletiyor. Bu sayede, save, findAll, findById, delete gibi temel CRUD işlemlerini otomatik olarak kullanabiliyoruz. 🎉
 
@@ -1094,7 +1079,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests((requests) -> requests
-            .requestMatchers("/public/\*\*").permitAll() // Herkese açık endpoint'ler
+            .requestMatchers("/public/*").permitAll() // Herkese açık endpoint'ler
             .anyRequest().authenticated() // Diğer tüm endpoint'ler için kimlik doğrulama
             )
             .formLogin((form) -> form
@@ -1120,7 +1105,7 @@ public class SecurityConfig {
 
 **Bu yapılandırmada:**
 
-/public/\*\* endpoint'leri herkese açık.
+/public/* endpoint'leri herkese açık.
 
 Diğer tüm endpoint'ler için kimlik doğrulama gerekiyor.
 
@@ -1277,7 +1262,9 @@ JWT tabanlı kimlik doğrulama, JwtRequestFilter ile sağlanıyor.
 
 Spring Security, CSRF (Cross-Site Request Forgery) ve XSS (Cross-Site Scripting) gibi yaygın güvenlik tehditlerine karşı koruma sağlar. Örneğin, CSRF korumasını etkinleştirmek için şu yapılandırmayı kullanabiliriz:
 
+```
 http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+```
 
 XSS koruması için ise, gelen verileri temizlemek ve doğrulamak önemlidir. Spring Security, bu tür saldırılara karşı otomatik koruma sağlar.
 
