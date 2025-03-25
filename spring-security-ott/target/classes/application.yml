@@ -1,0 +1,12 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: huseyinaydin99
+    password: <E-posta şifresi>
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
