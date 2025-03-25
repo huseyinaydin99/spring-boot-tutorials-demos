@@ -61,10 +61,9 @@ Spring Boot, geliştiricilere birçok hazır özellik sunar. Bu özellikler saye
 Spring Boot'un en sevdiğim özelliklerinden biri, otomatik yapılandırma (auto-configuration) özelliğidir. Bu özellik sayesinde, uygulamanın çalışması için gerekli olan birçok yapılandırma otomatik olarak halledilir. Mesela, bir veritabanı bağlantısı kurmak istiyorsun. Spring Boot, classpath'te H2 veya MySQL gibi bir veritabanı driver'ı gördüğünde, otomatik olarak gerekli yapılandırmayı yapar. Sen sadece application.properties dosyasına birkaç satır eklemen yeterli. İşte basit bir örnek:
 
 ```java
-بسم الله الرحمن الرحيم//
 /*
 @author Huseyin_Aydin
- @since 1994
+@since 1994
 @category Java, Spring Boot.
 */
 
