@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package tr.com.huseyinaydin;
+
+option  java_multiple_files=true;
+option java_package="tr.com.huseyinaydin";
+option  java_outer_classname="StockTradingProto";
+
+
+service StockTradingService{
+  // UNARY - RPC -> get current stock price
+  rpc getStockPrice(StockRequest) returns (StockResponse);
+
+  //server streaming
+}
+
+
+message StockRequest{
+  string stock_symbol=1;
+}
+
+message StockResponse{
+  string stock_symbol=1;
+  double price=2;
+  string timestamp=3;
+}
