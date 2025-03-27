@@ -46,3 +46,9 @@ target/generated-sources/protobuf diye bir klasör var ya, oraya protobuf dosyal
 Bu işlem sayesinde, protobuf'dan üretilen sınıflar ve gRPC stub'ları artık projene düzgün bir şekilde dahil oluyor.
 
 Import hataları ortadan kalkıyor, çünkü artık IntelliJ bu dosyaları doğru şekilde tanıyor ve import edebiliyorsun.
+
+#### Fotiler:
+
+![1](https://github.com/user-attachments/assets/1b44b518-3168-49f7-8f0c-e4e8c77bdebc)
+![2](https://github.com/user-attachments/assets/2272e78e-b884-4541-8ade-93b51f363268)
+![3](https://github.com/user-attachments/assets/02ecdb04-99f5-4dcf-8b1c-85ba34eb1dde)
