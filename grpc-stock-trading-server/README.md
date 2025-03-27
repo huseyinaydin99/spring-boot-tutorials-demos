@@ -239,5 +239,13 @@ port: 9090
 enable-reflection: true
 ```
 
+#### Fotiler:
+![1](https://github.com/user-attachments/assets/aad5dae4-989c-4b00-835b-20da423a73e1)
+![2](https://github.com/user-attachments/assets/ef593bde-b0dd-45c0-aa55-299ddb7028ae)
+![3](https://github.com/user-attachments/assets/cad55297-73d3-426a-9d7f-547144f215ee)
+![4](https://github.com/user-attachments/assets/c673afd4-f353-4a15-81fb-b25a8e1c233d)
+![5](https://github.com/user-attachments/assets/eba5c9ab-b286-4742-80d5-8f7fb4835fa3)
+![6](https://github.com/user-attachments/assets/dab274b9-b53b-44f9-8d04-8733559e8cda)
+
 #### Sonuçs
 İşte böyle gardaş, gRPC kullanarak hızlı, güvenilir bir borsa takip sistemi yaptım. 🚀 REST’in yavaşlığına takılmadan, binary formatta, akıcı bir şekilde veri alıp gönderdik. 🎯 gRPC’nin avantajlarını kullanarak düşük bant genişliği ve yüksek performans elde ettik. Gelecekte streaming ekleyip gerçek zamanlı borsa fiyat akışı da ekleyebilirim! 🏆
