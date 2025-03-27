@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package tr.com.huseyinaydin;
+option java_multiple_files=true;
+option java_package="tr.com.huseyinaydin";
+option java_outer_classname="StockTradingProto";
+
+service StockTradingService{
+  // UNARY - RPC -> güncel hisse senedi fiyatını edin
+  /*
+  UNARY RPC: Bu, gRPC'nin temel RPC türüdür. İstemci sunucuya bir istek gönderir ve sunucu da sadece bir yanıt döner. Yani, tek bir istek ve tek bir yanıt vardır.
+  Bu örnekte, istemci hisse senedinin sembolünü (stockSymbol) gönderiyor ve sunucu da bu sembole karşılık gelen hisse fiyatını (price) geri döndürüyor.
+  İstemci ile sunucu arasında her işlem tek bir veri gönderimi ve cevabı ile yapılır, bu da daha hızlı ve basit işlem akışlarını sağlar.
+  */
+  rpc getStockPrice(StockRequest) returns (StockResponse);
+
+  //server streaming
+}
+
+message StockRequest{
+  string stock_symbol=1;
+}
+
+message StockResponse{
+  string stock_symbol=1;
+  double price=2;
+  string timestamp=3;
+}
