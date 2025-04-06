@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>📈 Canlı Stok Fiyatları</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for icons -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
+
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .stock-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .stock-card {
+            width: 160px;
+            height: 160px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .stock-card:hover {
+            transform: scale(1.05);
+        }
+        .stock-symbol {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .stock-price {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .price-up { color: #00c853; }
+        .price-down { color: #d50000; }
+        .timestamp {
+            font-size: 12px;
+            color: #bdbdbd;
+        }
+    </style>
+
+    <script>
+        let stockPrices = {};
+        let priceHistory = {}; // Store historical prices for charts
+        let chart; // Global chart object
+
+        function subscribeStock(symbol) {
+            if (document.getElementById(symbol)) return; // Avoid duplicates
+
+            const eventSource = new EventSource(`/stocks/subscribe/${symbol}`);
+
+            let stockContainer = document.getElementById("stockContainer");
+
+            let card = document.createElement("div");
+            card.className = "stock-card";
+            card.id = symbol;
+            card.onclick = function() { showGraph(symbol); }; // Attach click event
+
+            card.innerHTML = `
+                <div class="stock-symbol">${symbol}</div>
+                <div class="stock-price" id="price-${symbol}">Loading...</div>
+                <div class="timestamp" id="time-${symbol}">--</div>
+            `;
+            stockContainer.appendChild(card);
+
+            priceHistory[symbol] = []; // Initialize price history array
+
+            eventSource.onmessage = function(event) {
+                let stockData = JSON.parse(event.data);
+                let priceElement = document.getElementById(`price-${symbol}`);
+                let timeElement = document.getElementById(`time-${symbol}`);
+
+                let prevPrice = stockPrices[symbol] || stockData.price;
+                priceElement.className = stockData.price > prevPrice ? "stock-price price-up" : "stock-price price-down";
+
+                priceElement.innerHTML = stockData.price.toFixed(2);
+                timeElement.innerHTML = stockData.timestamp;
+
+                stockPrices[symbol] = stockData.price;
+
+                // Store price history
+                priceHistory[symbol].push({ time: stockData.timestamp, price: stockData.price });
+
+                // Update the chart if it's open
+                if (chart && document.getElementById("chartTitle").innerText === symbol) {
+                    updateChart(symbol);
+                }
+            };
+
+            eventSource.onerror = function() {
+                console.error(`Error receiving stock data for ${symbol}`);
+                eventSource.close();
+            };
+        }
+
+        function showGraph(symbol) {
+            document.getElementById("chartModal").style.display = "block";
+            document.getElementById("chartTitle").innerText = symbol;
+            drawChart(symbol);
+        }
+
+        function drawChart(symbol) {
+            const ctx = document.getElementById("stockChart").getContext("2d");
+
+            if (chart) chart.destroy(); // Destroy old chart if exists
+
+            chart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: priceHistory[symbol].map(data => data.time),
+                    datasets: [{
+                        label: `Price of ${symbol}`,
+                        data: priceHistory[symbol].map(data => data.price),
+                        borderColor: "#00c853",
+                        backgroundColor: "rgba(0, 200, 83, 0.2)",
+                        fill: true,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { title: { display: true, text: "Time" } },
+                        y: { title: { display: true, text: "Price" } }
+                    }
+                }
+            });
+        }
+
+        function updateChart(symbol) {
+            if (!chart) return;
+            chart.data.labels = priceHistory[symbol].map(data => data.time);
+            chart.data.datasets[0].data = priceHistory[symbol].map(data => data.price);
+            chart.update();
+        }
+
+        function closeModal() {
+            document.getElementById("chartModal").style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <h2>📈 Anlık Stok Fiyatları Akışı</h2>
+    <div class="d-flex justify-content-center">
+        <input type="text" id="stockSymbol" class="form-control w-25 me-2" placeholder="Stok Sembolünü Gir">
+        <button class="btn btn-success" onclick="subscribeStock(document.getElementById('stockSymbol').value)">
+            <i class="fas fa-bell"></i> Abone Ol Gör
+        </button>
+    </div>
+
+    <div class="stock-container mt-4" id="stockContainer"></div>
+</div>
+
+<!-- Modal for Stock Chart -->
+<div id="chartModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8);">
+    <div class="modal-content" style="background: white; color: black; padding: 20px; width: 60%; margin: 10% auto; border-radius: 10px; text-align: center;">
+        <h3 id="chartTitle"></h3>
+        <canvas id="stockChart" style="max-height: 300px;"></canvas>
+        <br>
+        <button class="btn btn-danger" onclick="closeModal()">Kapat</button>
+    </div>
+</div>
+
+</body>
+</html>

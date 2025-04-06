@@ -1,0 +1,10 @@
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\src\main\java\tr\com\huseyinaydin\entity\Stock.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\src\main\java\tr\com\huseyinaydin\repository\StockRepository.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\src\main\java\tr\com\huseyinaydin\service\StockTradingServiceImpl.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\src\main\java\tr\com\huseyinaydin\StockTradingServerApplication.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\target\generated-sources\protobuf\grpc-java\tr\com\huseyinaydin\StockTradingServiceGrpc.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\target\generated-sources\protobuf\java\tr\com\huseyinaydin\StockRequest.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\target\generated-sources\protobuf\java\tr\com\huseyinaydin\StockRequestOrBuilder.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\target\generated-sources\protobuf\java\tr\com\huseyinaydin\StockResponse.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\target\generated-sources\protobuf\java\tr\com\huseyinaydin\StockResponseOrBuilder.java
+C:\Users\Huseyin_Aydin\Desktop\grpc-server-streaming\stock-trading-server\target\generated-sources\protobuf\java\tr\com\huseyinaydin\StockTradingProto.java
