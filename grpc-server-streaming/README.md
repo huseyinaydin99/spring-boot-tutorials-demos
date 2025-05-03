@@ -8,6 +8,8 @@ MVC kısmında ise basit ama işlevsel bir arayüz yaptım. Kullanıcı formdan 
 
 Projenin tüm mimarisinde “Clean Code” ve “Separation of Concerns” ilkelerine dikkat ettim. Yani katmanlar arası bağımlılığı minimumda tuttum. Kodun okunabilirliği ve sürdürülebilirliği üzerine epey kafa yordum. Şunu açık açık söyleyeyim; bu proje sadece bir ödev değil, aynı zamanda benim mühendislik bakış açımı da yansıtan bir iş oldu. Kod satırlarında benim imzam var resmen.
 
+![11_response_akiyo_MasaAllah](https://github.com/user-attachments/assets/f6fbf762-d3ea-4838-80ea-738d0daeb251)
+
 #### Açıklamalar:
 Projenin temeli Spring Boot 3.4.4 üzerine kurulu. Java 21 ile geliştirdim, modern ve güncel kalmak istedim.
 
@@ -45,14 +47,22 @@ Kodun içerisine بسم الله الرحمن الرحيم yazarak başladım, �
 
 "O protobuf dosyasını yazarken bi yerde ; unutmuşum, 2 saat ne hata verdi be kardeşim anlamadım resmen delirdim küçücük şeyi bulamayınca :D."
 
-Protobuf Dosyalarının Derleme Sürecine Dahil Edilmesi
+#### Protobuf Dosyalarının Derleme Sürecine Dahil Edilmesi
 Protobuf dosyaları (örneğin .proto uzantılı dosyalar) derlendiğinde, genellikle Java sınıfları (gRPC stubları gibi) oluşturulurlar. Bu sınıflar, genellikle target/generated-sources/protobuf dizininde bulunur. Ancak bu dizin, normalde kaynak dosyalar için kabul edilmez. Bu nedenle IntelliJ IDEA veya başka bir IDE, bu dizini kaynak dizin olarak işaretlemeniz gerektiğini anlayacaktır.
+
+![canli_stok_akisi](https://github.com/user-attachments/assets/dac1c0f6-99e8-4cd8-8907-9ca644b4fb7e)
 
 #### "Mark Directory as > Resources Root" işlemi şu şekilde çalışır:
 
 IDE’ye, bu dizinin sadece kaynak dosyalarını değil, aynı zamanda uygulamanın çalışması için gerekli kaynakları içeren bir dizin olduğunu bildirirsiniz.
 
 Böylece, generated dosyalarınız (Java sınıfları) target içinde doğru şekilde tanımlanır ve proje derlenirken IDE, bu sınıfları da kaynak olarak kabul eder.
+
+###### Server için:
+![server_icin](https://github.com/user-attachments/assets/c2eb9ae4-3973-4144-9723-0cf902251151)
+
+###### Client için:
+![client_icin](https://github.com/user-attachments/assets/a0f9653c-1441-4b5e-a18b-785425bc1024)
 
 #### 🧠 Düşünsel Derinlik – Yani Bu Proje Ne Anlatıyo?
 Şimdi bir de projeye sadece teknik olarak değil, anlam yönünden bakalım. Yazılım geliştirmek sadece kod yazmak değildir. Bi mimari kurarken onun ölçeklenebilirliğini, ileride neler eklenebileceğini, performansı ve sade anlaşılabilir olmasını da düşünürsün. Bu projede o ruh var.
