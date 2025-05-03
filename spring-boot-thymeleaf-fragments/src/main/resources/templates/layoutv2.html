@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Uygulamam</title>
+</head>
+<body>
+    <!-- Header Partial -->
+    <div th:replace="~{partials/headerv2 :: headerv2(${headerData})}"></div>
+    
+    <!-- Menu Partial -->
+    <div th:replace="~{partials/menu :: menu}"></div>
+    
+    <!-- İçerik Alanı -->
+    <main th:fragment="content">
+        <!-- Buraya sayfa içeriği gelecek haberin olsun-->
+    </main>
+    
+    <!-- Footer Partial -->
+    <div th:replace="~{partials/footer :: footer}"></div>
+</body>
+</html>

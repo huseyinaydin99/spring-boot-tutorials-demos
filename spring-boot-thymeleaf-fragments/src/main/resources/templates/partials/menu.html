@@ -1,0 +1,13 @@
+<div th:fragment="menu()">
+    <nav>
+        <!-- MenuService'den gelen öğeleri döngü ile listeler -->
+        <span th:each="item : ${menuItems}">
+			<a 
+	           th:href="${item.url}" 
+	           th:text="${item.name}">
+	             - Gelen Linktir
+	        </a>
+			<br />
+		</span>
+    </nav>
+</div>
