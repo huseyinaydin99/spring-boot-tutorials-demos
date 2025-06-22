@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Spring Boot Masterclass",
+    "instructor": "Hüseyin AYDIN",
+    "ratings": [
+      {"studentName": "Hasan", "stars": 5, "comment": "Çok iyi"},
+      {"studentName": "Mahmut", "stars": 4, "comment": "İyi"},
+      {"studentName": "Şakir", "stars": 5, "comment": "Mükemmel iş çıkarmışsn!"}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Microservices with Spring Cloud",
+    "instructor": "Hüseyin AYDIN",
+    "ratings": [
+      {"studentName": "Davut", "stars": 5, "comment": "Çok yardımcı oldu!"},
+      {"studentName": "Efe", "stars": 4, "comment": "İdare eder."},
+      {"studentName": "Fevzi", "stars": 3, "comment": "Olmamış."}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Python for Beginners",
+    "instructor": "Hüseyin AYDIN",
+    "ratings": [
+      {"studentName": "Zekeriya", "stars": 5, "comment": "Çok kolay."},
+      {"studentName": "Hüsamettin", "stars": 4, "comment": "Yeni başşayanlar için ideal."},
+      {"studentName": "Selim", "stars": 4, "comment": "Fena değil."}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Kafka for Developers",
+    "instructor": "Hüseyin AYDIN",
+    "ratings": [
+      {"studentName": "Kiraz", "stars": 5, "comment": "Çok bilgilendirici aceyip derecede çok iyi!"},
+      {"studentName": "Gizem", "stars": 5, "comment": "Anlaşılırlığı kolay."},
+      {"studentName": "Zehra", "stars": 4, "comment": "İyi örnekler vermiş."}
+    ]
+  }
+]
