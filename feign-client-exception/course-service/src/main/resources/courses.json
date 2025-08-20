@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Spring Boot Masterclass",
+    "instructor": "Hüseyin AYDIN",
+    "ratings": [
+      {"studentName": "Hüsnü", "stars": 5, "comment": "Mükemmel"},
+      {"studentName": "Hüsmen", "stars": 4, "comment": "Çok iyi"},
+      {"studentName": "Hüseyin", "stars": 3, "comment": "İyi ama daha iyi olabilir"},
+      {"studentName": "Hüstafali", "stars": 4, "comment": "Güzel bir kurs"},
+      {"studentName": "Hüsamettin", "stars": 5, "comment": "Çok öğretici"},
+      {"studentName": "Hüsniye", "stars": 5, "comment": "Harika açıklamalar!"}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Spring Cloud'unan Microservisler (-:",
+    "instructor": "Hüseyin AYDIN",
+    "ratings": [
+      {"studentName": "Davut", "stars": 5, "comment": "Çok yardımcı oldu"},
+      {"studentName": "Elif", "stars": 4, "comment": "İyi bir kurs"},
+      {"studentName": "Esma", "stars": 4, "comment": "Güzel anlatım"},
+      {"studentName": "Ferit", "stars": 3, "comment": "Bazı konular eksik"},
+      {"studentName": "Şakire 2", "stars": 3, "comment": "Üzgünüm biziminen diyılsın!"}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Yeni başlamayanlar için Python!",
+    "instructor": "Hüseyin AYDIN",
+    "ratings": [
+      {"studentName": "Bekir", "stars": 5, "comment": "Takibi kolay"},
+      {"studentName": "Berk", "stars": 4, "comment": "Çok faydalı"},
+      {"studentName": "Berkay", "stars": 5, "comment": "Harika bir başlangıç"},
+      {"studentName": "Bekant", "stars": 3, "comment": "İyi ama daha fazla örnek olabilirdi"},
+      {"studentName": "Hasan", "stars": 4, "comment": "Good for beginners"},
+      {"studentName": "Haşim", "stars": 4, "comment": "Well explained"}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Geliştiriciler için Apache Kafka",
+    "instructor": "Hüseyin AYDIN",
+    "ratings": [
+      {"studentName": "Sülüman", "stars": 5, "comment": "Çok bilgilendirici"},
+      {"studentName": "Şakire", "stars": 4, "comment": "İyi bir kurs"},
+      {"studentName": "Şakir 2", "stars": 3, "comment": "Konu biraz karmaşık"},
+      {"studentName": "Şakire 2", "stars": 3, "comment": "Üzgünüm biziminen diyılsın!"}
+    ]
+  }
+]
