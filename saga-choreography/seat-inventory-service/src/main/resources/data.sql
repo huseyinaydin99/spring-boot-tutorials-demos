@@ -1,0 +1,29 @@
+INSERT INTO seat_inventory (
+    theaterId,
+    showId,
+    seatNumber,
+    screenId,
+    status,
+    currentBookingId,
+    lastUpdated
+) VALUES
+-- 🎬 Salon 1: Avengers Endgame (Akşam Seansı)
+('THEATER_TR_001', 'SHOW_901', 'A1', 'SCREEN_1', 'AVAILABLE', NULL, NOW()),
+('THEATER_TR_001', 'SHOW_901', 'A2', 'SCREEN_1', 'LOCKED', 'BOOK_20251125_001', NOW()),
+('THEATER_TR_001', 'SHOW_901', 'A3', 'SCREEN_1', 'RESERVED', 'BOOK_20251125_002', NOW()),
+('THEATER_TR_001', 'SHOW_901', 'A4', 'SCREEN_1', 'AVAILABLE', NULL, NOW()),
+('THEATER_TR_001', 'SHOW_901', 'A5', 'SCREEN_1', 'AVAILABLE', NULL, NOW()),
+
+-- 🎬 Salon 2: Joker (Gece Seansı)
+('THEATER_TR_001', 'SHOW_902', 'B1', 'SCREEN_2', 'AVAILABLE', NULL, NOW()),
+('THEATER_TR_001', 'SHOW_902', 'B2', 'SCREEN_2', 'RESERVED', 'BOOK_20251125_003', NOW()),
+('THEATER_TR_001', 'SHOW_902', 'B3', 'SCREEN_2', 'LOCKED', 'BOOK_20251125_004', NOW()),
+('THEATER_TR_001', 'SHOW_902', 'B4', 'SCREEN_2', 'AVAILABLE', NULL, NOW()),
+('THEATER_TR_001', 'SHOW_902', 'B5', 'SCREEN_2', 'AVAILABLE', NULL, NOW()),
+
+-- 🎬 Salon 3: Oppenheimer (Sabah Seansı)
+('THEATER_TR_002', 'SHOW_903', 'C1', 'SCREEN_3', 'RESERVED', 'BOOK_20251125_005', NOW()),
+('THEATER_TR_002', 'SHOW_903', 'C2', 'SCREEN_3', 'AVAILABLE', NULL, NOW()),
+('THEATER_TR_002', 'SHOW_903', 'C3', 'SCREEN_3', 'LOCKED', 'BOOK_20251125_006', NOW()),
+('THEATER_TR_002', 'SHOW_903', 'C4', 'SCREEN_3', 'AVAILABLE', NULL, NOW()),
+('THEATER_TR_002', 'SHOW_903', 'C5', 'SCREEN_3', 'AVAILABLE', NULL, NOW());
