@@ -1,0 +1,26 @@
+# Docker Compose dosyasının hangi sürüm söz dizimini kullandığını belirtir; burada 3.8 sürümünün özelliklerinden faydalanacaksın.
+version: '3.8'
+
+# Uygulamada çalışacak tüm container servislerinin tanımlarının yer aldığı ana bloktur.
+services:
+  # Ollama LLM servisinin tanımını başlatan servis adıdır; bu isimle diğer servisler bu konteynıra referans verebilir.
+  ollama:
+    # Container’ın Docker içinde görünecek mantıksal adını belirler; log ve komutlarda bu isimle kullanırsın.
+    container_name: ollama
+    # Bu servis için hangi imajın kullanılacağını belirtir; burada Docker Hub’daki resmi ollama/ollama:latest imajı çekilir.
+    image: ollama/ollama:latest
+    # Host makine ile container arasındaki port eşleştirmelerini tanımlar.
+    ports:
+      # Host üzerindeki 11434 portunu container içindeki 11434 portuna yönlendirir; Spring uygulaman bu adres üzerinden Ollama’ya ulaşır.
+      - "11434:11434"
+    # Container içinde kalıcı tutulacak dosya/dizinlerin host veya named volume ile ilişkilendirilmesini sağlar.
+    volumes:
+      # ollama_models isimli volume’ü container içindeki /root/.ollama dizinine mount eder; modeller burada saklanarak container silinse bile kaybolmaz.
+      - ollama_models:/root/.ollama  # isteğe bağlı ancak önerilir
+    # Container’ı, Docker daemon veya makine yeniden başladığında otomatik ayağa kaldırır; sadece sen manuel olarak durdurursan tekrar kendiliğinden başlamaz.
+    restart: unless-stopped
+
+# Uygulamanın kullanacağı named volume tanımlarını içeren bloktur.
+volumes:
+  # ollama_models adında kalıcı bir volume oluşturur; Ollama model dosyaları burada tutulur ve container ömründen bağımsız olarak korunur.
+  ollama_models:

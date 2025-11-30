@@ -1,0 +1,21 @@
+# Spring yapılandırma kök anahtarıdır; uygulamanın adı ve AI entegrasyonu gibi Spring’e özgü ayarlar burada toplanır.
+spring:
+  # Uygulamanın mantıksal adını tanımlayan bölüm; loglarda ve bazı Spring bileşenlerinde bu isimle görünecek.
+  application:
+    # Spring Boot uygulamasının adını 'spring-ai-toon' olarak belirler; projeyi diğer servislerden ayırt etmeyi kolaylaştırır.
+    name: spring-ai-toon
+  # Spring AI ile ilgili tüm yapılandırmaların toplandığı bölümdür; buradan Ollama gibi model sağlayıcılarını ayarlarsın.
+  ai:
+    # Spring AI’in Ollama entegrasyonuna özel ayarlarını barındırır; hangi URL’ye ve hangi modele gideceğini buradan kontrol edersin.
+    ollama:
+      # Ollama sunucusunun temel adresini tanımlar; Docker’da 11434 portunu açtığın için uygulama bu URL üzerinden modele istek yollar.
+      base-url: http://localhost:11434
+      # Sohbet (chat) tabanlı LLM çağrıları için kullanılan yapılandırma bloğudur.
+      chat:
+        # Chat isteklerinde kullanılacak varsayılan modeli 'llama2' olarak seçer; böylece her çağrıda modeli tek tek belirtmek zorunda kalmazsın.
+        model: llama2
+
+# Spring Boot gömülü sunucusunun (Tomcat vs.) hangi port üzerinden dinleyeceğini belirleyen kök ayardır.
+server:
+  # Uygulamanın HTTP isteklerini 9191 portu üzerinden almasını sağlar; böylece aynı makinede çalışan diğer servislerle port çakışmasını önleyebilirsin.
+  port: 9191
