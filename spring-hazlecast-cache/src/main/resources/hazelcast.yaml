@@ -1,0 +1,32 @@
+hazelcast:
+  instance-name: hazelcast-instance
+
+  map:
+    default:
+      backup-count: 1
+
+      # Entry ne kadar süre tutulacak (0 = sonsuz)
+      time-to-live-seconds: 0
+
+      eviction:
+        eviction-policy: LRU        # En son kullanılan en son atılır, en uzun süredir dokunulmayan atılır
+        max-size-policy: ENTRY_COUNT
+        size: 10_000                # Maksimum 10.000 entry, sonra eviction devreye girer
+
+# hazelcast:
+#   instance-name: hazelcast-instance
+#
+#   map:
+#     usersCache:
+#       backup-count: 1
+#       eviction:
+#         eviction-policy: LRU
+#         max-size-policy: ENTRY_COUNT
+#         size: 5000
+#
+#     productsCache:
+#       backup-count: 1
+#       eviction:
+#         eviction-policy: LRU
+#         max-size-policy: ENTRY_COUNT
+#         size: 20000

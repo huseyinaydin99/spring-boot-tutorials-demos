@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: spring-hazlecast-cache
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/huseyin_aydin_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Europe/Istanbul&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: toor
+    driver-class-name: com.mysql.cj.jdbc.Driver   # mysql-connector-j için yeni sürücü
+
+  jpa:
+    hibernate:
+      ddl-auto: update            # şemayı entity’lere göre güncel tut
+    show-sql: true                # SQL’i log’a yaz
+    open-in-view: false           # Boot 4 dünyasında genelde tavsiye edilen ayar
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  cache:
+    type: hazelcast               # Cache implementasyonu Hazelcast olacak
+
+  hazelcast:
+    config: classpath:hazelcast.yaml   # Aşağıda tanımlayacağımız Hazelcast config dosyası
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
