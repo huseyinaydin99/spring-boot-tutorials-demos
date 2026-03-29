@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: siparis-detay-servisi # Uygulamanın adı; loglarda, servis keşfinde ve config yönetiminde bu isim kullanılır.
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # MySQL veritabanına bağlanmak için kullanılacak JDBC driver sınıfı.
+    url: jdbc:mysql://localhost:3306/huseyin_aydin_db # Bağlanılacak veritabanının adresi (host, port ve database adı).
+    username: root # Veritabanına giriş için kullanıcı adı.
+    password: 12346 # Veritabanına giriş için şifre.
+
+  jpa:
+    show-sql: true # Çalıştırılan SQL sorgularını konsolda gösterir (debug için faydalı).
+    hibernate:
+      ddl-auto: update # Entity’lere göre tabloyu otomatik günceller (silmez, sadece değiştirir).
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # Tablo ve kolon isimlerini Java’daki gibi aynen kullanır (değiştirmez).
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect # Hibernate’e MySQL kullanıldığını söyler, uygun SQL üretmesini sağlar.
+        jdbc:
+          batch_size: 1000 # Toplu insert/update işlemlerinde her seferde 1000 kayıt göndererek performansı artırır.
+        order_inserts: true # Insert işlemlerini gruplayarak daha verimli çalışmasını sağlar.
+        generate_statistics: true # Hibernate performans istatistiklerini toplar (debug ve analiz için).
+
+server:
+  port: 9191 # Uygulamanın çalışacağı port (tarayıcıdan erişim için kullanılacak port).
