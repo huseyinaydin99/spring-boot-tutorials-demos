@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: product-inventory  # Uygulamanın adı (loglarda ve mikroservis kimliğinde kullanılır)
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver  # MySQL JDBC sürücüsü
+    url: jdbc:mysql://localhost:3306/huseyin_aydin_db  # Bağlanılacak MySQL veritabanı adresi
+    username: root  # Veritabanı kullanıcı adı
+    password: 123456  # Veritabanı şifresi
+
+  jpa:
+    show-sql: true  # Hibernate'in çalıştırdığı SQL sorgularını konsola yazdırır
+    hibernate:
+      ddl-auto: update  # Entity'lere göre tabloyu otomatik günceller (create, update, validate vs.)
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl  # İsimleri olduğu gibi kullanır (case/format değiştirmez)
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect  # Hibernate'e MySQL kullandığını belirtir
+        jdbc:
+          batch_size: 1000  # Aynı anda 1000 sorguyu batch olarak gönderir (performans artışı sağlar)
+        order_inserts: true  # Insert işlemlerini sıralı ve optimize şekilde yapar
+        generate_statistics: true  # Hibernate çalışma istatistiklerini üretir (debug/analiz için)
+
+server:
+  port: 9191  # Uygulamanın çalışacağı port (http://localhost:9191)
