@@ -1,0 +1,13 @@
+server:
+  port: 9090
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/huseyinaydin99
+
+  h2:
+    console:
+      enabled: true

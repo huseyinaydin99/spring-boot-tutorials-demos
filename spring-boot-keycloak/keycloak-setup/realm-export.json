@@ -1,0 +1,90 @@
+{
+  "realm": "huseyinaydin99",
+  "enabled": true,
+  "displayName": "Huseyinaydin99 Realm",
+
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@example.com",
+
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin",
+          "temporary": false
+        }
+      ],
+
+      "realmRoles": [
+        "default-roles-huseyinaydin99",
+        "admin"
+      ],
+
+      "requiredActions": []
+    }
+  ],
+
+  "clients": [
+    {
+      "clientId": "spring-boot-keycloak",
+      "enabled": true,
+      "publicClient": true,
+
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "serviceAccountsEnabled": false,
+
+      "protocol": "openid-connect",
+
+      "redirectUris": [
+        "http://localhost:9090/*",
+        "http://localhost:8080/*"
+      ],
+
+      "webOrigins": [
+        "http://localhost:9090",
+        "http://localhost:8080"
+      ],
+
+      "attributes": {
+        "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.session.required": "true"
+      }
+    }
+  ],
+
+  "roles": {
+    "realm": [
+      {
+        "name": "default-roles-huseyinaydin99",
+        "description": "Default role for the realm",
+        "composite": false,
+        "clientRole": false
+      },
+      {
+        "name": "user",
+        "description": "User role",
+        "composite": false,
+        "clientRole": false
+      },
+      {
+        "name": "admin",
+        "description": "Admin role",
+        "composite": false,
+        "clientRole": false
+      }
+    ]
+  },
+
+  "defaultRole": {
+    "name": "default-roles-huseyinaydin99"
+  },
+
+  "eventsEnabled": false,
+  "eventsListeners": ["jboss-logging"]
+}

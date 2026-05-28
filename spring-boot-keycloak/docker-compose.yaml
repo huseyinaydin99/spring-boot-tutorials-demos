@@ -1,0 +1,49 @@
+version: "3.9"  # Docker’ın bu dosyayı nasıl okuyacağını belirler
+services:  # Çalıştırılacak uygulama parçalarını (container’ları) tanımlar
+
+  keycloak:  # Giriş, kullanıcı ve yetkilendirme işlemlerini yöneten sistem
+    image: quay.io/keycloak/keycloak:23.0.7  # Keycloak’un hazır çalışan sürümünü indirir
+    container_name: keycloak  # Container’a kolay hatırlanan bir isim verir
+    command: start-dev --import-realm # Keycloak’u geliştirme modunda başlatır
+    environment:  # Keycloak’un çalışması için gerekli ayarları verir
+      KEYCLOAK_ADMIN: admin  # Yönetici hesabının kullanıcı adını belirler
+      KEYCLOAK_ADMIN_PASSWORD: admin  # Yönetici hesabının şifresini belirler
+      KC_HOSTNAME: localhost  # Keycloak’a hangi adres üzerinden erişileceğini söyler
+      KC_HOSTNAME_STRICT: "false"  # Adres kontrolünü gevşeterek hata çıkmasını engeller
+    ports:
+      - "8180:8080"  # Bilgisayardan 8180 portuyla Keycloak’a erişmeyi sağlar
+    volumes:
+      - keycloak_data:/opt/keycloak/data  # Kullanıcı ve ayar verilerini kalıcı hale getirir
+      - ./keycloak-setup/realm-export.json:/opt/keycloak/data/import/realm.json
+    networks:
+      - auth-network  # Diğer servislerle aynı ağda konuşmasını sağlar
+    restart: unless-stopped  # Çökse bile otomatik tekrar çalıştırır
+
+  keycloak-setup:  # Keycloak ilk ayarlarını otomatik yapan yardımcı servis
+    image: mcr.microsoft.com/powershell:latest  # PowerShell çalıştırmak için hazır ortam indirir
+    depends_on:
+      - keycloak  # Keycloak hazır olmadan başlamamasını sağlar
+    volumes:
+      - ./keycloak-setup:/keycloak-setup  # Bilgisayarındaki scripti container’a taşır
+    command:
+      - pwsh  # PowerShell’i başlatır
+      - -File  # Bir script dosyası çalıştıracağını söyler
+      - /keycloak-setup/init-keycloak.ps1  # İlk kurulum scriptini çalıştırır
+
+  h2-console:  # Test amaçlı hafif veritabanı arayüzü
+    image: oscarfonts/h2  # H2 veritabanının hazır web arayüzünü indirir
+    container_name: h2-console  # Container’a isim verir
+    ports:
+      - "9092:8082"  # Veritabanı arayüzüne tarayıcıdan erişim sağlar
+    environment:
+      H2_OPTIONS: -webPort 8082  # Web arayüzünün hangi portta çalışacağını ayarlar
+    networks:
+      - auth-network  # Aynı ağda diğer servislerle iletişim kurmasını sağlar
+    restart: unless-stopped  # Çökse bile otomatik yeniden başlatır
+
+networks:  # Servislerin birbirini görmesini sağlayan sanal ağ sistemi
+  auth-network:  # Bu projeye özel ağ adı
+    driver: bridge  # Docker’ın standart iç ağ sistemini kullanır
+
+volumes:  # Verileri bilgisayar kapansa bile saklayan alanlar
+  keycloak_data:  # Keycloak’un tüm kullanıcı ve ayar verilerini saklar

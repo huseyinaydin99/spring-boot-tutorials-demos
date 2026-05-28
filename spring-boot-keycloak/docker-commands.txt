@@ -1,0 +1,48 @@
+docker pull quay.io/keycloak/keycloak:25.0.6
+
+docker run -d `
+  --name keycloak `
+  -p 8180:8080 `
+  -e KEYCLOAK_ADMIN=admin `
+  -e KEYCLOAK_ADMIN_PASSWORD=admin `
+  quay.io/keycloak/keycloak:25.0.6 `
+  start-dev
+
+# Docker Compose ile başlat
+docker-compose up -d
+
+# Keycloak'ın hazır olmasını bekle (yaklaşık 30 saniye)
+Start-Sleep -Seconds 30
+
+# Token almayı test et
+Invoke-RestMethod -Method Post `
+  -Uri "http://localhost:8180/realms/huseyinaydin99/protocol/openid-connect/token" `
+  -ContentType "application/x-www-form-urlencoded" `
+  -Body "client_id=spring-boot-keycloak&username=admin&password=admin&grant_type=password"
+
+# Logları görüntüle
+docker-compose logs keycloak
+
+# Durumu kontrol et
+docker-compose ps
+
+# Yeniden başlat
+docker-compose restart keycloak
+
+# Tamamen temizle ve yeniden başlat
+docker-compose down -v
+docker-compose up -d
+
+# 1. Tamamen temizle
+docker-compose down -v
+
+# 2. Volumes'u manuel temizle
+docker volume prune -f
+
+# 3. Keycloak'ı yeniden başlat
+docker-compose up -d
+
+# 4. Keycloak'ın tamamen hazır olmasını bekle (30-40 saniye)
+Start-Sleep -Seconds 40
+
+.\keycloak\\init-keycloak.ps1
