@@ -1,0 +1,46 @@
+spring:
+  # Uygulamanın veritabanı bağlantı ayarlarını burada tanımlıyoruz
+  datasource:
+    # MySQL JDBC sürücüsü kullanıldığını belirtir
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # Veritabanına bağlanılacak adres ve veritabanı adı
+    url: jdbc:mysql://localhost:3306/huseyin_aydin_db
+    # Veritabanı kullanıcı adı
+    username: root
+    # Veritabanı şifresi
+    password: 123456
+
+  # JPA ve Hibernate yapılandırmaları burada yapılır
+  jpa:
+    # Çalışan SQL sorgularını konsola yazdırır (debug için)
+    show-sql: true
+    hibernate:
+      # Hibernate’in tablo yapısını otomatik güncellemesini sağlar
+      ddl-auto: update
+      naming:
+        # Veritabanında fiziksel tablo ve kolon isimlendirme stratejisini belirler
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        # MySQL için uygun SQL dialect seçilir
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  # Kafka mesajlaşma altyapısı ayarları
+  kafka:
+    # Kafka broker adresi (localhost üzerinde çalışan Kafka)
+    bootstrap-servers: localhost:9092
+    producer:
+      # Kafka'ya gönderilecek mesajların key formatı
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # Kafka'ya gönderilecek mesajların value (JSON) formatı
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      # Consumer grubunun adı (aynı gruptakiler yük paylaşımı yapar)
+      group-id: booking-event-group
+      # Kafka’dan gelen key verisinin nasıl okunacağını belirler
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # Kafka’dan gelen JSON verinin nasıl deserialize edileceğini belirler
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        # Gelen JSON verisinde hangi paketlerin güvenilir olduğunu belirtir
+        spring.json.trusted.packages: "*"

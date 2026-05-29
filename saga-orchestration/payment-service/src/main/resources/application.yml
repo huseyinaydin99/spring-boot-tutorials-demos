@@ -1,0 +1,24 @@
+spring:
+  # Kafka ile iletişim kurulacak broker adresi tanımlanır
+  kafka:
+    # Kafka sunucusunun adresi
+    bootstrap-servers: localhost:9092
+    producer:
+      # Kafka'ya gönderilen mesajların key kısmının nasıl serileştirileceği
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # Kafka'ya gönderilen mesajların JSON formatında gönderilmesini sağlar
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      # Consumer grubunun adı, aynı grup mesajları paylaşır
+      group-id: payment-event-group
+      # Kafka'dan gelen key verisinin nasıl çözüleceği
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # Kafka'dan gelen JSON verinin nasıl deserialize edileceği
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        # Gelen JSON verilerinin güvenli sayılacağı paketleri belirtir
+        spring.json.trusted.packages: "*"
+
+# Uygulamanın çalışacağı port numarası burada belirlenir
+server:
+  port: 9393
