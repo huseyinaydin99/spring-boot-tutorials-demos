@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: fraud-detection-demo
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: tr.com.huseyinaydin.serdes.TransactionSerializer
+    streams:
+      application-id: fraud-detection-streams
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: com.javatechie.serdes.TransactionSerde
+      state-dir: /Users/huseyinaydin99/Desktop/kafka-stream-logs

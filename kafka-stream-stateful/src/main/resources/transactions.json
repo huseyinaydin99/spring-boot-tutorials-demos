@@ -1,0 +1,62 @@
+[
+  {
+    "transactionId": "2634hgsa7",
+    "userId": "U1",
+    "amount": 5000,
+    "location": "Turkiye",
+    "type": "debit",
+    "items": [
+      {"itemId": "I101", "name": "Earphones", "price": 2000, "quantity": 1},
+      {"itemId": "I102", "name": "Charger", "price": 1500, "quantity": 1},
+      {"itemId": "I103", "name": "USB Cable", "price": 1500, "quantity": 1}
+    ]
+  },
+  {
+    "transactionId": "37826jdaj",
+    "userId": "U2",
+    "amount": 15000,
+    "location": "USA",
+    "type": "credit",
+    "items": [
+      {"itemId": "I104", "name": "Laptop", "price": 12000, "quantity": 1},
+      {"itemId": "I105", "name": "Mouse", "price": 1500, "quantity": 1},
+      {"itemId": "I106", "name": "Keyboard", "price": 1500, "quantity": 1}
+    ]
+  },
+  {
+    "transactionId": "384jnbdfs",
+    "userId": "U1",
+    "amount": 200,
+    "location": "Turkiye",
+    "type": "debit",
+    "items": [
+      {"itemId": "I107", "name": "Pen", "price": 50, "quantity": 2},
+      {"itemId": "I108", "name": "Notebook", "price": 100, "quantity": 1}
+    ]
+  },
+  {
+    "transactionId": "239864dbd",
+    "userId": "U3",
+    "amount": 25000,
+    "location": "UK",
+    "type": "credit",
+    "items": [
+      {"itemId": "I109", "name": "Smart TV", "price": 20000, "quantity": 1},
+      {"itemId": "I110", "name": "Soundbar", "price": 5000, "quantity": 1}
+    ]
+  },
+  {
+    "transactionId": "316299djd",
+    "userId": "U4",
+    "amount": 100000,
+    "location": "China",
+    "type": "credit",
+    "items": [
+      {"itemId": "I111", "name": "iPhone", "price": 50000, "quantity": 1},
+      {"itemId": "I112", "name": "MacBook", "price": 40000, "quantity": 1},
+      {"itemId": "I113", "name": "iPad", "price": 10000, "quantity": 1}
+    ]
+  }
+]
+
+
