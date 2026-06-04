@@ -1,0 +1,35 @@
+spring: # Spring Boot uygulamasına ait tüm temel yapılandırmaları tek yerde toplamak için kullanılır.
+  application:
+    name: payment-service # Uygulamanın servis adını belirlemek için kullanılır; loglama, servis keşfi ve mikroservis yönetiminde tanımlayıcı görevi görür.
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # Spring'in MySQL veritabanına bağlanabilmesi için kullanılacak JDBC sürücüsünü belirtmek amacıyla kullanılır.
+    url: jdbc:mysql://localhost:3306/huseyin_aydin_db?useSSL=false # Uygulamanın hangi MySQL sunucusuna ve hangi veritabanına bağlanacağını belirtmek için kullanılır.
+    username: root # Veritabanına giriş yapacak kullanıcı adını tanımlamak için kullanılır.
+    password: toor # Veritabanına giriş yapacak kullanıcının şifresini belirtmek için kullanılır.
+
+  jpa:
+    show-sql: true # Hibernate tarafından çalıştırılan SQL sorgularını konsolda görebilmek ve hata ayıklamayı kolaylaştırmak için kullanılır.
+    hibernate:
+      ddl-auto: update # Entity sınıflarındaki değişikliklerin veritabanı tablolarına otomatik yansıtılması için kullanılır.
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # Entity alan isimlerinin veritabanında aynen korunmasını sağlamak için kullanılır.
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect # Hibernate'in MySQL'e uygun SQL üretmesini sağlamak için kullanılır.
+
+  kafka:
+    bootstrap-servers: localhost:9092 # Kafka broker adresini belirtmek ve uygulamanın Kafka kümesine bağlanmasını sağlamak için kullanılır.
+    consumer:
+      group-id: payment-group # Bu tüketicinin hangi consumer grubuna ait olduğunu belirlemek ve mesajların grup içinde paylaşılmasını sağlamak için kullanılır.
+      enable-auto-commit: false # Offset yönetimini manuel yapmak ve mesajların kontrollü şekilde işlendiğinden emin olmak için kullanılır.
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer # Kafka'dan gelen mesaj anahtarlarının String tipine dönüştürülmesi için kullanılır.
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer # Kafka'dan gelen JSON verilerinin Java nesnelerine dönüştürülmesi için kullanılır.
+      properties:
+        spring.json.trusted.packages: "*" # JSON dönüşümü sırasında tüm paketlerdeki sınıflara güvenilmesini sağlamak için kullanılır.
+
+    listener:
+      ack-mode: MANUAL # Mesajın başarıyla işlendiği bilgisinin geliştirici tarafından manuel olarak verilmesini sağlamak için kullanılır.
+
+server:
+  port: 9292 # Uygulamanın hangi port üzerinden istek kabul edeceğini belirlemek için kullanılır.
